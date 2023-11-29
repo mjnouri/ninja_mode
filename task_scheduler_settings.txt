@@ -1,0 +1,36 @@
+# check usernames when you install these Scheduled Tasks
+
+# for chrome_history_checker Scheduled Task
+
+check - Run whether user is logged on or not
+	check - Do not store password. ...
+check - Run with highest privileges
+check - Hidden
+Configure for - Windows 10
+---
+On a schedule
+One time
+Select time on a :00 minute
+Repeat task every: 5 minutes
+for a duration of: Indefinitely
+Stop task if it runs longer than: 30 minutes
+Check - Enabled
+---
+Action - Start a program
+Program/script - powershell.exe
+Add arguments - -ExecutionPolicy Bypass -File C:\Users\USERNAME\Scripts\ninja_mode\chrome_history_checker.ps1
+Start in - C:\Users\USERNAME\Scripts\ninja_mode\
+---
+Settings
+Stop the task if it runs longer than: 1 hour
+
+---------
+
+# for zoom_process_checker
+
+check - Run only when user is logged on
+---
+Action - Start a program
+Program/script - mshta
+Add arguments - vbscript:Execute("CreateObject(""WScript.Shell"").Run ""powershell -ExecutionPolicy Bypass & 'C:\Users\USERNAME\Scripts\ninja_mode\zoom_process_checker.ps1'"", 0:close")
+Start in - C:\Users\USERNAME\Scripts\ninja_mode\

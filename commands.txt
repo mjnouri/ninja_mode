@@ -1,0 +1,11 @@
+# display tasks with "chrome" and "zoom" in their name with detail
+schtasks /v | findstr "chrome zoom"
+
+# run BrowsingHistoryView manually
+BrowsingHistoryView.exe /cfg "BrowsingHistoryView.cfg" /stext C:\Users\Gladys\Scripts\ninja_mode\other\browser_history.txt
+
+# not working
+# find and kill chrome process, then delete History
+tasklist | findstr chrome
+taskkill /F /IM "chrome.exe" /T
+del "C:\Users\Gladys\AppData\Local\Google\Chrome\User Data\Default\History"

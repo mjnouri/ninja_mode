@@ -1,2 +1,2 @@
-# ninja-mode
-This project will track a Python driven location and networking script to run on an ongoing basis on an Android phone.
+# ninja_mode
+This suite includes 2 PowerShell scripts. chrome_history_checker.ps1 checks the last hour of Google Chrome browser history for strings "court" and "zoom" and notifies the user via sms and email, with log attachment, if it does. zoom_process_checker.ps1 detects if a current window has string "zoom" in it and notifies the user with sms and email if it does.
